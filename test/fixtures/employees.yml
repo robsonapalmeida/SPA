@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  birthday: 2019-06-22
+  salary: 1.5
+  shift: MyString
+  department: MyString
+  hiredate: 2019-06-22
+  nickname: MyString
+  photo: 
+
+two:
+  name: MyString
+  birthday: 2019-06-22
+  salary: 1.5
+  shift: MyString
+  department: MyString
+  hiredate: 2019-06-22
+  nickname: MyString
+  photo: 
