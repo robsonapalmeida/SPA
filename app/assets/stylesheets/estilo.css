@@ -1,3 +1,5 @@
+
+
 body{
 	font-family: arial, sansserif;
 	background-color: #ccc; 
@@ -6,7 +8,7 @@ body{
 }
 
 .hero{
-	background-image: url(2.jpg);
+	background-image: url(z.jpg);
 	height: 500px;
 	background-size: cover;
 	border-top: 1px solid transparent;
@@ -20,17 +22,32 @@ body{
 
 .hero-content h1{
 	text-transform: uppercase;
-	font-size: 50px;
+	font-size: 30px;
 	text-shadow: 3px 3px 5px black;
 }
 .hero-content p{
-	background-color: rgba(0,0,0, .5);
+	background-color: rgba(0,0,0, .3);
 	display: inline-block;
 	padding: 10px;
 	border-bottom: 2px solid white;
 
 }
 
+
+.hero-content a{
+	
+	display: block;
+	padding: 1px;
+	color: white;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 12px;
+	letter-spacing: 1px;
+}
+
+.hero-content p:hover{
+	background:rgba(0,0,0, 0.5);
+}
 
 .hero nav ul{
 	text-align: right;
