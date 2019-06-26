@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @user_x_service.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user_x_service.email %>
+</p>
+
+<p>
+  <strong>Service:</strong>
+  <%= @user_x_service.service %>
+</p>
+
+<p>
+  <strong>Servicedate:</strong>
+  <%= @user_x_service.servicedate %>
+</p>
+
+<p>
+  <strong>Message:</strong>
+  <%= @user_x_service.message %>
+</p>
+
+<%= link_to 'Edit', edit_user_x_service_path(@user_x_service) %> |
+<%= link_to 'Back', user_x_services_path %>

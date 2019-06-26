@@ -1,0 +1,2 @@
+class UserXService < ApplicationRecord
+end

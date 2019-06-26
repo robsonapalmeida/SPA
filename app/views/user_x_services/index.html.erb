@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>User X Services</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Service</th>
+      <th>Servicedate</th>
+      <th>Message</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user_x_services.each do |user_x_service| %>
+      <tr>
+        <td><%= user_x_service.name %></td>
+        <td><%= user_x_service.email %></td>
+        <td><%= user_x_service.service %></td>
+        <td><%= user_x_service.servicedate %></td>
+        <td><%= user_x_service.message %></td>
+        <td><%= link_to 'Show', user_x_service %></td>
+        <td><%= link_to 'Edit', edit_user_x_service_path(user_x_service) %></td>
+        <td><%= link_to 'Destroy', user_x_service, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User X Service', new_user_x_service_path %>
