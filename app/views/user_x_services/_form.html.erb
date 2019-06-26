@@ -12,27 +12,36 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
+    <%= form.label :Name %>
     <%= form.text_field :name %>
   </div>
 
   <div class="field">
-    <%= form.label :email %>
+    <%= form.label :Email %>
     <%= form.text_field :email %>
   </div>
 
   <div class="field">
-    <%= form.label :service %>
+    <%= form.label :Service %>
     <%= form.text_field :service %>
   </div>
 
   <div class="field">
-    <%= form.label :servicedate %>
-    <%= form.date_select :servicedate %>
+    <%= form.label "Service Date" %>
+    <%= form.text_field :servicedate, :input_html => { "data-behaviour" => "datepicker" } %>
+
+
+    
+   
+
+
+
+
+
   </div>
 
   <div class="field">
-    <%= form.label :message %>
+    <%= form.label :Message %>
     <%= form.text_area :message %>
   </div>
 
