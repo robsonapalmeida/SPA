@@ -1,4 +1,5 @@
 class EmployeesController < ApplicationController
+  layout "lspa"
   before_action :set_employee, only: [:show, :edit, :update, :destroy]
 
   # GET /employees

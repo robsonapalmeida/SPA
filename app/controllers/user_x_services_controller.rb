@@ -1,4 +1,5 @@
 class UserXServicesController < ApplicationController
+  layout "lspa"
   before_action :set_user_x_service, only: [:show, :edit, :update, :destroy]
 
   # GET /user_x_services
