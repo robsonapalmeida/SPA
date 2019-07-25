@@ -4,6 +4,7 @@ class UserXServicesController < ApplicationController
 
   # GET /user_x_services
   # GET /user_x_services.json
+
   def index
     @user_x_services = UserXService.all
   end
@@ -11,6 +12,7 @@ class UserXServicesController < ApplicationController
   # GET /user_x_services/1
   # GET /user_x_services/1.json
   def show
+
   end
 
   # GET /user_x_services/new
