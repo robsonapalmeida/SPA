@@ -5,26 +5,26 @@
 <table class="table table-hover">
   <thead>
     <tr>
-      <th>Name</th>
+      <th>Nome</th>
       <th>Email</th>
-      <th>Service</th>
-      <th>Service_Date</th>
-      <th>Message</th>
+      <th>Servicio</th>
+      <th>Fecha del servicio</th>
+      <th>Mensaje</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @user_x_services.each do |userservice| %>
+    <% @user_x_services.each do |usr| %>
       <tr>
-        <td><%= userservice.name %></td>
-        <td><%= userservice.email %></td>
-        <td><%= userservice.service %></td>
-        <td><%= userservice.servicedate %></td>
-        <td><%= userservice.message %></td>
-        <td><%= link_to 'Show', userservice %></td>
-        <td><%= link_to 'Edit', edit_user_x_service_path(userservice)  %></td>
-        <td><%= link_to 'Destroy', userservice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= usr.name %></td>
+        <td><%= usr.email %></td>
+        <td><%= usr.service.name %></td>
+        <td><%= usr.servicedate.strftime("%d/%m/%Y") %></td>
+        <td><%= usr.message %></td>
+        <td><%= link_to 'Show', usr %></td>
+        <td><%= link_to 'Edit', edit_user_x_service_path(usr)  %></td>
+        <td><%= link_to 'Destroy', usr, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 
       </tr>
     <% end %>
@@ -33,4 +33,4 @@
 
 <br>
 
-<%= link_to 'New User X Service', new_user_x_service_path %>
+<%= link_to t('links.new'), new_user_x_service_path,class:"btn btn-primary" %>

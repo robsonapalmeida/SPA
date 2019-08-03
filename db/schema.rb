@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_26_015822) do
+ActiveRecord::Schema.define(version: 2019_07_28_214220) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,14 +28,22 @@ ActiveRecord::Schema.define(version: 2019_06_26_015822) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "user_x_services", force: :cascade do |t|
+  create_table "services", force: :cascade do |t|
     t.string "name"
-    t.string "email"
-    t.string "service"
-    t.date "servicedate"
-    t.text "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  create_table "user_x_services", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.date "servicedate"
+    t.text "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "service_id"
+    t.index ["service_id"], name: "index_user_x_services_on_service_id"
+  end
+
+  add_foreign_key "user_x_services", "services"
 end

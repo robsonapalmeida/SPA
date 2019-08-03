@@ -22,6 +22,7 @@ class UserXServicesController < ApplicationController
 
   # GET /user_x_services/1/edit
   def edit
+     
   end
 
   # POST /user_x_services
@@ -31,7 +32,8 @@ class UserXServicesController < ApplicationController
 
     respond_to do |format|
       if @user_x_service.save
-        format.html { redirect_to @user_x_service, notice: 'User x service was successfully created.' }
+        #format.html { redirect_to @user_x_service, notice: 'User x service was successfully created.' }
+        format.html  {redirect_to :controller => 'user_x_services', :action => 'index' }
         format.json { render :show, status: :created, location: @user_x_service }
       else
         format.html { render :new }
@@ -72,6 +74,6 @@ class UserXServicesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_x_service_params
-      params.require(:user_x_service).permit(:name, :email, :service, :servicedate, :message)
+      params.require(:user_x_service).permit(:name, :email, :service_id, :servicedate, :message)
     end
 end

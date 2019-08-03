@@ -1,29 +1,35 @@
-<p id="notice"><%= notice %></p>
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @user_x_service.name %>
-</p>
+<form>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user_x_service.email %>
-</p>
+    <div class="form-group col-md-4">
+      <%= label_tag nil, @user_x_service.class.human_attribute_name(:name) %>
+      <%= text_field_tag nil, @user_x_service.name, class:"form-control", disabled: true %>
+    </div>
 
-<p>
-  <strong>Service:</strong>
-  <%= @user_x_service.service %>
-</p>
+    <div class="form-group col-md-4">
+      <%= label_tag nil, @user_x_service.class.human_attribute_name(:email) %>
+      <%= text_field_tag nil, @user_x_service.email, class:"form-control", disabled: true %>
+    </div>
 
-<p>
-  <strong>ServiceDate:</strong>
-  <%= @user_x_service.servicedate %>
-</p>
+    <div class="form-group col-md-4">
+      <%= label_tag nil, @user_x_service.class.human_attribute_name(:service) %>
+      <%= text_field_tag nil,  @user_x_service.service.name, class:"form-control", disabled: true     %>
+    </div>
 
-<p>
-  <strong>Message:</strong>
-  <%= @user_x_service.message %>
-</p>
+    <div class="form-group col-md-4">
+      <%= label_tag nil,  @user_x_service.class.human_attribute_name(:servicedate) %>
+      <%= text_field_tag nil,  @user_x_service.servicedate, class:"form-control", disabled: true    %>
+    </div>
 
-<%= link_to 'Edit', edit_user_x_service_path(@user_x_service) %> |
-<%= link_to 'Back', user_x_services_path %>
+  <div class="form-group col-md-4">
+      <%= label_tag nil, @user_x_service.class.human_attribute_name(:message) %>
+      <%= text_field_tag nil, @user_x_service.message, class:"form-control", disabled: true    %>
+    </div>
+
+</form>    
+
+<%= link_to 'Edit', edit_user_x_service_path(@user_x_service),class:"btn btn-primary" %> |
+<%= link_to 'Back', user_x_services_path,class:"btn btn-primary" %>
+
+
