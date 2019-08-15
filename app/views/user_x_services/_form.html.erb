@@ -1,7 +1,7 @@
 <%= form_with(model: user_x_service, local: true) do |form| %>
   <% if user_x_service.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(user_x_service.errors.count, "error") %> prohibited this user_x_service from being saved:</h2>
+      <h4><%= pluralize(user_x_service.errors.count, "error - ") %>no puedo salvar:</h4>
 
       <ul>
       <% user_x_service.errors.full_messages.each do |message| %>
@@ -25,30 +25,54 @@
   </div>
 
   <div class="form-row">
-    <div class="form-group col-md-6">
+    <div class="form-group col-md-4">
       <%= form.label :Servicio %>
       <%= form.select("service_id", Service.all.collect {|s| [ s.name, s.id ] }, { include_blank: true },class:"form-control" ) %>  
     </div>
     
-    <div class="form-group col-md-6">
-      <%= form.label "Data del servicio" %>
+    <div class="form-group col-md-4">
+      <%= form.label "fecha del servicio" %>
       <!--%= form.date_field :servicedate,  class:"form-control" %-->
-      <%= form.date_field :servicedate, as: :date, value: form.object.try(:strftime,"%d/%m/%Y"), class: 'form-control' %>
+      <%= form.date_field :servicedate, as: :datetime, value: form.object.try(:strftime,"%d/%m/%Y"), class: "form-control" %>
     
     </div>
-  </div>
-     
-    
-   <div class="form-group">
-     <%= form.label :Message %>
-     <%= form.text_area :message,class:"form-control col-md-6" , placeholder:"Message" %>
-   </div>
 
+  </div>
+
+    <div>
+      <%= form.label "Horario del Servicio" %>
+   </div>  
+
+    <div class="form-group col-md-4">
+      <!--%= form.date_field :servicetime,class:"form-control" , placeholder:"Entre con el horario"  %-->
+      <!--%= form.text_field :servicetime, as: :time, value: form.object.try(:strftime,"%H:%M:%S"), class: 'form-control' %-->
+      <!--atual%= form.time_select :servicetime %-->
+      <%= form.time_select :servicetime, :default => {:hour => '00', :minute => '00'} %>
+     
+
+    </div>
+  
+ 
+      
+    <div class="form-group">
+      <%= form.label :Message %>
+      <%= form.text_area :message,class:"form-control col-md-6" , placeholder:"Message" %>
+    </div>
+
+
+
+      <br>
+      <br>
 
 
  
   <div class="actions">
-    <%= form.submit %>
+    <% if user_x_service.new_record? %>
+      <%= form.submit 'Crear el servicio' %>
+    <% else %>
+      <%= form.submit 'Actualizar' %>
+    <%end%>
+
   </div>
  
   <br>
