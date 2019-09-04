@@ -24,20 +24,44 @@
      <div class = "container-fluid">  
         <ul class="nav justify-content-end">
           <li class="nav-item">
-            <a class="nav-link active" href="#">Active</a>
+          <!-- Liha de coment>
+          <%= link_to 'Volver para Inizio', root_path ,class:"w3-button w3-white w3-btn w3-round-xxlarge w3-hover-sand w3-center" %>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Link</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Link</a>
-          </li>
+          </li-->
           <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            <!--a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a-->
+          
+            <%= link_to 'Volver para Inizio', root_path ,class:"nav-link" %>
+
           </li>
         </ul>
         
         <%= yield %>
+        
+        
+
+
+        <% if controller.controller_name == "user_x_services" %>
+          <% if  controller.action_name != "new"%>
+            <div class="w3-container">
+		          <%= link_to 'haga tu cita', new_user_x_service_path ,class:"w3-button w3-white w3-btn w3-round-xxlarge w3-hover-sand w3-center" %>
+		   	    </div>
+          <%end%>   
+        <%end%>
+
+        <% if controller.controller_name == "welcome" %>
+          <% if  controller.action_name != "index"%>
+            <div class="w3-container">
+		          <%= link_to 'haga tu cita', new_user_x_service_path ,class:"w3-button w3-white w3-btn w3-round-xxlarge w3-hover-sand w3-center" %>
+		   	    </div>
+          <%end%>   
+        <%end%>
+
      </div>  
   </body>
 </html>

@@ -11,12 +11,30 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+
+  <div class="form-row"> 
+    <div class="form-group col-md-4">
+      <%= form.label :nombre %>
+      <%= form.text_field :name,class:"form-control" , placeholder:"Entre con el nombre del nuevo servicio"  %>
+    </div>
+  
   </div>
 
+
+   
   <div class="actions">
-    <%= form.submit %>
+    <% if service.new_record? %>
+      <%= form.submit 'Crear el servicio' %>
+    <% else %>
+      <%= form.submit 'Actualizar' %>
+    <%end%>
+  
   </div>
+  <br>
+  <br>
+  
+
+
+
+
 <% end %>

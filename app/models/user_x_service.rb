@@ -6,8 +6,7 @@ class UserXService < ApplicationRecord
   validate :servicetime_exists
   validate :name_exists
   #validates :email, :uniqueness => {:scope => [:servicedate, :servicetime], message:"Para esse mesmo dia e hora, ja tem um servicio cadastrado. Veja su email"}
-  validate :email_search
-  #validate :email_busca
+  validate :email_search, :on => :create
   
   def servicetime_exists
     if servicetime.strftime("%H") == "00" && servicetime.strftime("%M") == "00"
@@ -34,12 +33,13 @@ class UserXService < ApplicationRecord
   def email_search
   
     chkexist = UserXService.where("email = ? and servicedate = ? AND servicetime = ? AND id <>?",email, servicedate, servicetime,id)
+   
       if  chkexist[0].nil? == false 
         errors.add("", "¿Tiene el servicio ** #{chkexist[0].service.name} ** no mismo día y hora ")
        
       end  
-    console
-    xx
+      
+     
   end
 
   

@@ -19,7 +19,12 @@
 
     <div class="form-group col-md-4">
       <%= label_tag nil,  @user_x_service.class.human_attribute_name(:servicedate) %>
-      <%= text_field_tag nil,  @user_x_service.servicedate, class:"form-control", disabled: true    %>
+      <%= text_field_tag nil,  @user_x_service.servicedate.strftime("%d/%m/%Y"), class:"form-control", disabled: true    %>
+    </div>
+
+    <div class="form-group col-md-4">
+      <%= label_tag nil,  @user_x_service.class.human_attribute_name(:servicedate) %>
+      <%= text_field_tag nil,  @user_x_service.servicetime.strftime("%H:%M:%S"), class:"form-control", disabled: true    %>
     </div>
 
   <div class="form-group col-md-4">
@@ -27,9 +32,11 @@
       <%= text_field_tag nil, @user_x_service.message, class:"form-control", disabled: true    %>
     </div>
 
+
+
 </form>    
 
-<%= link_to 'Edit', edit_user_x_service_path(@user_x_service),class:"btn btn-primary" %> |
-<%= link_to 'Back', user_x_services_path,class:"btn btn-primary" %>
+<%= link_to 'Modificar', edit_user_x_service_path(@user_x_service),class:"btn btn-primary" %> |
+<%= link_to 'Volver', user_x_services_path,class:"btn btn-primary" %>
 
 

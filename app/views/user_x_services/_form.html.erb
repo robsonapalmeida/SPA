@@ -23,12 +23,18 @@
       <%= form.text_field :email,class:"form-control" , placeholder:"E-mail"  %>
     </div>
   </div>
-
+  
   <div class="form-row">
     <div class="form-group col-md-4">
       <%= form.label :Servicio %>
-      <%= form.select("service_id", Service.all.collect {|s| [ s.name, s.id ] }, { include_blank: true },class:"form-control" ) %>  
+      <%if user_x_service.new_record?%>
+        <%= form.select("service_id", Service.all.collect {|s| [ s.name, s.id ] }, {selected: $S_selecionado}, class:"form-control" ) %>  
+      <%else%>
+        <%= form.select("service_id", Service.all.collect {|s| [ s.name, s.id ] }, { include_blank: true },class:"form-control" ) %>  
+      <%end%>
     </div>
+    
+  
     
     <div class="form-group col-md-4">
       <%= form.label "fecha del servicio" %>
@@ -48,23 +54,15 @@
       <!--%= form.text_field :servicetime, as: :time, value: form.object.try(:strftime,"%H:%M:%S"), class: 'form-control' %-->
       <!--atual%= form.time_select :servicetime %-->
       <%= form.time_select :servicetime, :default => {:hour => '00', :minute => '00'} %>
-     
-
     </div>
-  
- 
       
     <div class="form-group">
       <%= form.label :Message %>
       <%= form.text_area :message,class:"form-control col-md-6" , placeholder:"Message" %>
     </div>
 
-
-
       <br>
       <br>
-
-
  
   <div class="actions">
     <% if user_x_service.new_record? %>
@@ -72,15 +70,11 @@
     <% else %>
       <%= form.submit 'Actualizar' %>
     <%end%>
-
+  
   </div>
- 
   <br>
   <br>
-
-
-
-
-
-
+  
+  
+  
 <% end %>

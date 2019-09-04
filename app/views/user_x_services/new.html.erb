@@ -1,8 +1,42 @@
 <h4>Solicitar los Servicios</h4>
+
 <br>
 <br>
   
 
 <%= render 'form', user_x_service: @user_x_service %>
 
-<%= link_to 'Back', user_x_services_path,class:"btn btn-primary" %>
+<%= servicio $S_Type %>
+
+
+<%
+=begin  
+
+** commented lines below were substituted by a helper named servicio which is placed into application_helper.rb
+   I did it to make the code as dryer as possible
+   My goal is to use this method to provide selected id as the user calls the service screen.
+   Like, calling mesoterapia view, if the user chooses to schedule the service, the select field has to be setted to this service 
+**
+
+    <% if $S_Type ==  "mesoterapia" %>
+        <%= link_to "Volver - Mesoterapia", mesoterapia_path,class:"btn btn-primary" %>
+    <%  elsif $S_Type ==  "microdermoabrasion" %>   
+        <%= link_to "Volver - Micro Dermo abrasion", microdermoabrasion_path,class:"btn btn-primary" %>
+    <%  elsif $S_Type ==  "exfoliacionaclarante" %>   
+        <%= link_to "Volver - Exfoliacion Aclarante", exfoliacionaclarante_path,class:"btn btn-primary" %>
+    <%  elsif $S_Type ==  "ultracavitacion" %>   
+        <%= link_to "Volver - Ultra Cavitacion", ultracavitacion_path,class:"btn btn-primary" %>
+    <%  elsif $S_Type ==  "drenajelinfatico" %>   
+        <%= link_to "Volver - Drenaje Linfatico", drenajelinfatico_path,class:"btn btn-primary" %>
+    <%  elsif $S_Type ==  "radiofrequencia" %>   
+        <%= link_to "Volver - Radio Frequencia", radiofrequencia_path,class:"btn btn-primary" %>
+
+
+    <% else %>
+        <%= link_to 'Volver - Inizio', root_path,class:"btn btn-primary" %>
+    <%end>
+=end %>
+
+
+
+

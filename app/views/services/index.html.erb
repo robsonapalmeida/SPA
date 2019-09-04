@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Services</h1>
+<h3>Services</h3>
 
-<table>
+<table class="table table-hover">
   <thead>
     <tr>
       <th>Name</th>
@@ -14,9 +14,9 @@
     <% @services.each do |service| %>
       <tr>
         <td><%= service.name %></td>
-        <td><%= link_to 'Show', service %></td>
-        <td><%= link_to 'Edit', edit_service_path(service) %></td>
-        <td><%= link_to 'Destroy', service, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', service %></td>
+        <td><%= link_to 'Modificar', edit_service_path(service) %></td>
+        <td><%= link_to 'Apagar', service, method: :delete, data: { confirm: 'Tieses certeza?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Service', new_service_path %>
+<%= link_to 'Nuevo tipo del Servicio', new_service_path, class:"btn btn-primary" %>

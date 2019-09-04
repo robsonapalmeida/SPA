@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<title>pagina de exemplo estrutura basica</title>
+	<meta charset="utf-8">
+	<meta name="author" content="Guilherme">
+	<meta name="description" content="descricao">
+	<meta name="keywords" content="html5, tecnologia">
+	<link rel="stylesheet" href="css/estilo.css">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<style>
+		body {
+			font-size: 22px;
+			font-family: sans-serif;
+			margin: auto;
+		}
+
+		p {
+			line-height: 1.5;
+		}
+
+		
+	</style>
+</head>
+
+<body>
+	<div id="principal">
+		<header class="hero">
+			<nav>
+				<ul>
+					<!--<li><a href="index.html"> Inicio</a></li> -->
+					<li><%= link_to 'Inicio', mesoterapia_path %> </li>
+
+					<li><a href="#">Servicios</a></li>
+					<li><a href="#">Quien somos</a></li>
+				</ul>
+			</nav>
+			<div class="hero-content">
+				<h1>IM Image</h1>
+				<p> <%= link_to 'Haz tu primer cita', calendar_path %> </p>
+			</div>
+		</header>
+		<main>
+			<section class="content-section  w3-hover-red w3-round-large">
+
+				<div class="w3-row">
+					<div class="w3-third w3-center">
+						<div class="container">
+                            
+                            <!--%= image_tag("/assets/spa.jpg",  alt: "sun" ) %-->
+                            <img src="/assets/spa.jpg" alt="cloud" style="width:95%">
+                            <div class="overlay">
+								<div class="text">Telefono 97575-4938</div>
+								<!--h3>Put Some text here </h3-->
+							</div>
+						</div>
+					</div>
+
+
+					<div class="w3-third w3-center">
+						<img src="/assets/corte.png" alt="cloud" style="width:95%">
+						<h3>Put Some text here 1</h3>
+
+					</div>
+
+					<div class="w3-third w3-center w3-margin-bottom">
+						<img src="/assets/manicurepedicure.jpg" alt="clouds" style="width:95%">
+						<h3>Put Some text here 2</h3>
+
+					</div>
+				</div>
+
+			</section>
+
+			<section class="content-section">
+				<article>
+					<header class="content-header">
+						<h2>Titulo do Article</h2>
+					</header>
+					<p>Paragrafo 1</p>
+					<p>Paragrafo 2</p>
+
+				</article>
+
+			</section>
+		</main>
+		<footer class="rodape">
+			<p>Copyright &copy; 2018</p>
+		</footer>
+	</div>
+</body>
+
+</html>

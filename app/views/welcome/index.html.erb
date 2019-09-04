@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
 	<title>pagina de exemplo estrutura basica</title>
 	<meta charset="utf-8">
@@ -8,102 +8,102 @@
 	<meta name="keywords" content="html5, tecnologia">
 	<link rel="stylesheet" href="css/estilo.css">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-	<style>
-		body {
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+		<style>
+		body{
 			font-size: 22px;
 			font-family: sans-serif;
 			margin: auto;
 		}
-
-		p {
+		p{
 			line-height: 1.5;
-		}
 
-		
+		}
 	</style>
 </head>
 
 <body>
-	<div id="principal">
-		<header class="hero">
-			<nav>
-				<ul>
-					<!--<li><a href="index.html"> Inicio</a></li> -->
-					<li><%= link_to 'Inicio', root_path %> </li>
 
-					<li><a href="#">Servicios</a></li>
-					<li><a href="#">Quien somos</a></li>
-				</ul>
-			</nav>
-			<div class="hero-content">
-				<h1>IM Image</h1>
-				<p> <%= link_to 'Haz tu primer cita', calendar_path %> </p>
-			</div>
-		</header>
-		<main>
-			<section class="content-section  w3-hover-red w3-round-large">
+  <div class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-dark-grey" style="display:none" id="mySidebar">
+    <button class="w3-bar-item w3-button w3-large"
+      onclick="w3_close()">[Close] &times;</button>
+      <%= link_to 'Mesoterapia', mesoterapia_path ,class:"w3-bar-item w3-button" %>   
+      <%= link_to 'Micro DermoAbrasion', microdermoabrasion_path ,class:"w3-bar-item w3-button" %>
+      <%= link_to 'Exfoliacion Aclarante', exfoliacionaclarante_path ,class:"w3-bar-item w3-button" %>
+      <%= link_to 'Utra Cavitacion', ultracavitacion_path ,class:"w3-bar-item w3-button" %>
+      <%= link_to 'Drenaje Linfatico', drenajelinfatico_path ,class:"w3-bar-item w3-button" %>
+      <%= link_to 'Radio Frequencia', radiofrequencia_path ,class:"w3-bar-item w3-button" %>
+      <a href="#" class="w3-bar-item w3-button">No se ve la hoja </a>
+      
+  </div>
+
+  <div id="main" style="background-color:rgba(204, 204, 204,1);">
+	  <header class="hero">
+		  <div class="w3-container w3-dark-grey" >
+
+		    <div class="w3-teal">
+			    <button id="openNav" class="w3-button w3-teal w3-xlarge w3-dark-grey" onclick="w3_open()">&#9776;</button>
+		      <div class="w3-container w3-dark-grey">
+	        
+		    	</div>
+		    </div>
+      </div>
+
+			<nav>
+			
+		  </nav>
+		    <div class="hero-content">
+		       <h1>IM Image</h1>
+			
+	    	</div>
+    </header>
+	  <main>
+
+			<section class="content-section w3-#ccc  w3-round-large">
 
 				<div class="w3-row">
-					<div class="w3-third w3-center">
-						<div class="container">
-                            
-                            <!--%= image_tag("/assets/spa.jpg",  alt: "sun" ) %-->
-                            <img src="/assets/spa.jpg" alt="cloud" style="width:95%">
-                            <div class="overlay">
-								<div class="text">Telefono 97575-4938</div>
-								<!--h3>Put Some text here </h3-->
-							</div>
+						
+						<div class="w3-third w3-center">
+							<div class="container">
+								<img src="/assets/mesoterapia2.jpg" alt="sun" style="width:95%">
+								<button class="w3-bar-item w3-button w3-teal" style="width:95%"><%= link_to 'Mesoterapia', mesoterapia_path ,class:"w3-bar-item w3-button  style:text-decoration: none"%></button>
+						  </div>
 						</div>
-					</div>
 
+						<div class="w3-third w3-center">
+							<img src="/assets/microdermoabrasion.jpg" alt="cloud"  style="width:95%">
+							
+							<button class="w3-bar-item w3-button w3-teal" style="width:95%"><%= link_to 'Micro DermoAbrasion', microdermoabrasion_path ,class:"w3-bar-item w3-button  style:text-decoration: none"%></button>
+						</div>
 
-					<div class="w3-third w3-center">
-						<img src="/assets/corte.png" alt="cloud" style="width:95%">
-						<h3>Put Some text here 1</h3>
-
-					</div>
-
-					<div class="w3-third w3-center w3-margin-bottom">
-						<img src="/assets/manicurepedicure.jpg" alt="clouds" style="width:95%">
-						<h3>Put Some text here 2</h3>
-
-					</div>
+						<div class="w3-third w3-center w3-margin-bottom">
+							<img src="/assets/exfoliacionaclarante.jpg" alt="clouds"  style="width: 95% " >
+						
+							<button class="w3-bar-item w3-button w3-teal" style="width:95%"><%= link_to 'Exfoliacion Aclarante', exfoliacionaclarante_path ,class:"w3-bar-item w3-button  style:text-decoration: none"%></button>
+						</div>
 				</div>
 
-				<!--
-		<div class="card">
-				<img src="imagem/spa.jpg" alt="">
-				<p>Servicio de SPA</p>
-			</div>
+			</section-->
 
-		    <div class="card">
-		    	<img src="imagem/corte.png" alt="">
-		    	<p>Servicio de Peluqueria</p>
-            </div>
-
-			<div class="card">
-				<img src="imagem/manicurepedicure.jpg" alt="">
-				<p>Manicure Pedicure</p>
-			</div>
--->
-			</section>
-
-			<section class="content-section">
-				<article>
-					<header class="content-header">
-						<h2>Titulo do Article</h2>
-					</header>
-					<p>Paragrafo 1</p>
-					<p>Paragrafo 2</p>
-
-				</article>
-
-			</section>
 		</main>
 		<footer class="rodape">
 			<p>Copyright &copy; 2018</p>
 		</footer>
-	</div>
-</body>
+  </div>
 
+  <script>
+		function w3_open() {
+			document.getElementById("main").style.marginLeft = "25%";
+			document.getElementById("mySidebar").style.width = "25%";
+			document.getElementById("mySidebar").style.display = "block";
+			document.getElementById("openNav").style.display = 'none';
+		}
+		function w3_close() {
+			document.getElementById("main").style.marginLeft = "0%";
+			document.getElementById("mySidebar").style.display = "none";
+			document.getElementById("openNav").style.display = "inline-block";
+		}
+  </script>
+</body>
 </html>

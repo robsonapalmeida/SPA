@@ -1,4 +1,5 @@
 class ServicesController < ApplicationController
+  layout "lspa"
   before_action :set_service, only: [:show, :edit, :update, :destroy]
 
   # GET /services
@@ -28,7 +29,7 @@ class ServicesController < ApplicationController
 
     respond_to do |format|
       if @service.save
-        format.html { redirect_to @service, notice: 'Service was successfully created.' }
+        format.html { redirect_to @service, notice: 'Tipo del servicio cadatrado com exito.' }
         format.json { render :show, status: :created, location: @service }
       else
         format.html { render :new }
@@ -42,7 +43,7 @@ class ServicesController < ApplicationController
   def update
     respond_to do |format|
       if @service.update(service_params)
-        format.html { redirect_to @service, notice: 'Service was successfully updated.' }
+        format.html { redirect_to @service, notice: 'Datos del servicio fue actualizado.' }
         format.json { render :show, status: :ok, location: @service }
       else
         format.html { render :edit }
