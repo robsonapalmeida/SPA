@@ -9,7 +9,15 @@ class UserXServicesController < ApplicationController
 
   # Set a simple session cookie
     
+
   def index
+    if (params[:customer_email] != nil && session[:email] != nil)
+      if params[:customer_email] != session[:email] 
+        session[:email] = nil
+      end 
+    end
+
+
     @p = ""
     @test = params[:customer_email]
     if params[:customer_email].nil?
@@ -22,7 +30,7 @@ class UserXServicesController < ApplicationController
       
     end
 
-    if session[:email] != "" 
+    if session[:email] != nil 
         @user_x_services = UserXService.where("email = ? ",session[:email])
         @p = "valor do session"
     end      
@@ -58,7 +66,7 @@ class UserXServicesController < ApplicationController
         #$email = @user_x_service.email
         session[:email] = @user_x_service.email
         AdminMailer.servicio_email(@user_x_service).deliver_now
-        #format.html { redirect_to @user_x_service, notice: 'Servicio cadastrado com exito.' }
+        #format.html { redirect_to @user_x_service, notice: 'Servicio cadastrado com exito. Un email fue enviado com los datos' }
         format.html  {redirect_to :controller => 'user_x_services', :action => 'index' }
         format.json { render :show, status: :created, location: @user_x_service }
       else
@@ -75,7 +83,8 @@ class UserXServicesController < ApplicationController
       if @user_x_service.update(user_x_service_params)
         #Envio del email
         AdminMailer.servicio_email(@user_x_service).deliver_now
-        format.html { redirect_to @user_x_service, notice: 'Servicio atualizado com exito.' }
+        session[:email] = @user_x_service.email
+        format.html { redirect_to @user_x_service, notice: 'Servicio atualizado com exito. Un email fue enviado com los datos' }
         format.json { render :show, status: :ok, location: @user_x_service }
       else
         format.html { render :edit }

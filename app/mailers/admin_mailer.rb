@@ -1,6 +1,7 @@
 class AdminMailer < ApplicationMailer
     #default from: 'noreply@gmail.com'
     #$S_Type
+    
     def servicio_email(email_customer)
         @email_customer = email_customer.name 
         @servicedate = email_customer.servicedate.strftime("%d/%m/%Y") 
@@ -11,8 +12,7 @@ class AdminMailer < ApplicationMailer
 
         @url = 'http://localhost:3000/user_x_services/?customer_email='
         
-       
-        mail(from: @email, to: 'robsonsgbl@gmail.com', subject: "Su servicio fue cadastrado!")
+        mail(from: @email, to: 'robsonsgbl@gmail.com', cc:@email, subject: "Su servicio fue cadastrado!")
 
      end
     

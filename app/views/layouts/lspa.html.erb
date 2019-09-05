@@ -47,7 +47,7 @@
 
 
         <% if controller.controller_name == "user_x_services" %>
-          <% if  controller.action_name != "new"%>
+          <% if  controller.action_name != "new" &&  controller.action_name != "edit" &&  controller.action_name != "index" &&  controller.action_name != "show" %> 
             <div class="w3-container">
 		          <%= link_to 'haga tu cita', new_user_x_service_path ,class:"w3-button w3-white w3-btn w3-round-xxlarge w3-hover-sand w3-center" %>
 		   	    </div>

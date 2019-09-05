@@ -32,7 +32,7 @@ class WelcomeController < UserXServicesController
  
 
   def index
-    session[:email] = ""
+    session[:email] = nil
   end
 
   def new
