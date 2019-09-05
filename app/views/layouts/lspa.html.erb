@@ -53,7 +53,11 @@
 
 
         <% if controller.controller_name == "user_x_services" %>
+<<<<<<< HEAD
           <% if  controller.action_name != "create" && controller.action_name != "new" &&  controller.action_name != "edit" &&  controller.action_name != "index" &&  controller.action_name != "show" %> 
+=======
+          <% if  controller.action_name != "new" &&  controller.action_name != "edit" &&  controller.action_name != "index" &&  controller.action_name != "show" %> 
+>>>>>>> 36605fd... Ajustments because of session and request query params from email due to the user access and starting send app to heroku, that is the reason gemfile is changed
             <div class="w3-container">
 		          <%= link_to 'haga tu cita' + controller.action_name, new_user_x_service_path ,class:"w3-button w3-white w3-btn w3-round-xxlarge w3-hover-sand w3-center" %>
 		   	    </div>
