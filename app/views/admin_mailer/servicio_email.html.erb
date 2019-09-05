@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Hola!, <%= @email_customer %></h1>
+    <p>
+      Su servicio fue programamado com exito,<br>
+      servicio es: <%= @servicename %>.<br>
+      fecha es: <%= @servicedate %>.<br>
+      horario  es: <%= @servicetime %>.<br>
+      servicio actual id :  <%= @id %>.<br>
+    </p>
+    <p>
+      <%= link_to 'Vea todo tus citas', @url + @email %>.
+
+      
+    </p>
+    <p>gracias por usar nuestros servicios!</p>
+  </body>
+</html>

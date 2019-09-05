@@ -27,6 +27,19 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
+
+
+  # envio de email usando mailtrap
+  config.action_mailer.delivery_method = :smtp
+    config.action_mailer.smtp_settings = {
+      :user_name => '61942df3cdde98',
+      :password => '77e2af92f0cafa',
+      :address => 'smtp.mailtrap.io',
+      :domain => 'smtp.mailtrap.io',
+      :port => '2525',
+      :authentication => :cram_md5
+    }
+
   # Store uploaded files on the local file system (see config/storage.yml for options)
   config.active_storage.service = :local
 

@@ -6,6 +6,18 @@
 
 <%= render 'form', user_x_service: @user_x_service %>
 
+<%
+=begin  
+
+  "servicio $S_Type" below, is an application.helper method which uses $S_Type global variable to set the link back to the right page
+  needs to be improved
+  First goal usig this method was to provide an way to set the id of service type also, but, did ot work as expected and due to the fact
+  that the dead line has comming, no time at all to change, maybe next time.
+  there is a file called teste.rb which has a parameter idtipodeservicio = 0, I`ve tested with pry and works, I'd like to do the same call
+  as below with this parameter, just to drye the code. maybe in the future
+
+=end %>
+
 <%= servicio $S_Type %>
 
 

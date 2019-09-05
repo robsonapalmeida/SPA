@@ -42,5 +42,7 @@ class WelcomeController < UserXServicesController
   def calendar
     @Calendar = 'Teste call calendar'
   end
+
+  
    
 end
