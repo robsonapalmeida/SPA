@@ -7,14 +7,17 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
-
+    <%= stylesheet_link_tag  'estilo', media: 'all', 'data-turbolinks-track': 'reload' %>
     
-   
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+
 
   <style>
     body {
       background-color: #ccc;
+      font-size: 12px;"
     }
   </style>
 
@@ -36,7 +39,7 @@
           <li class="nav-item">
             <!--a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a-->
           
-            <%= link_to 'Volver para Inizio', root_path ,class:"nav-link" %>
+            <%= link_to 'Volver para Inizio', root_path , style:"font-size: 12px;", class:"nav-link" %>
 
           </li>
         </ul>
