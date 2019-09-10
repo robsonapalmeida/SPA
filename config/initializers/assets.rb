@@ -24,6 +24,8 @@ Rails.application.config.assets.precompile += %w( estilo.css
 
 Rails.application.config.assets.precompile += %w( cable.js
                                                   application.js
+                                                  rails-ujs.js
+                                                  
 
                                                   )
 
