@@ -6,7 +6,8 @@ body{
 }
 
 .hero{
-	background-image: url(/assets/2.jpg);
+	background-image: url("2.jpg");
+
 	height: 400px;
 	background-size: cover;
 	border-top: 1px solid transparent;
