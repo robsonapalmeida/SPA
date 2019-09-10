@@ -18,7 +18,7 @@ Rails.application.config.assets.precompile += %w( estilo.css
                                                   radiofrequencia.css
                                                   exfoliacionaclarante.css
                                                   drenajelinfatico.css
-                                                  application
+                                                  application.css
                                                   )
 
  
