@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h3>Todos los sercicios programados</h3>
+<h3>Todos los servicios programados</h3>
 
 <table class="table table-hover">
   <thead>
@@ -31,7 +31,7 @@
         
         <td><%= link_to 'Mostrar', usr %></td>
         <td><%= link_to 'Modificar', edit_user_x_service_path(usr)  %></td>
-        <td><%= link_to 'Apagar', usr, method: :delete, data: { confirm: 'Tienes certeza?'}  %></td>
+         <td>     <%= link_to "Delete", user_x_service_path(@user_x_services, usr), method: :delete %> </td>
 
       </tr>
     <% end %>
