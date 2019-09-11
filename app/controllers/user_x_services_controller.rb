@@ -65,7 +65,8 @@ class UserXServicesController < ApplicationController
       if @user_x_service.save
         #$email = @user_x_service.email
         session[:email] = @user_x_service.email
-        AdminMailer.servicio_email(@user_x_service).deliver_now
+        #line below disable just to make a heroku web test 
+        #AdminMailer.servicio_email(@user_x_service).deliver_now
         #format.html { redirect_to @user_x_service, notice: 'Servicio cadastrado com exito. Un email fue enviado com los datos' }
         format.html  {redirect_to :controller => 'user_x_services', :action => 'index' }
         format.json { render :show, status: :created, location: @user_x_service }
@@ -82,7 +83,8 @@ class UserXServicesController < ApplicationController
     respond_to do |format|
       if @user_x_service.update(user_x_service_params)
         #Envio del email
-        AdminMailer.servicio_email(@user_x_service).deliver_now
+        #line below disable just to make a heroku web test 
+        #AdminMailer.servicio_email(@user_x_service).deliver_now
         session[:email] = @user_x_service.email
         format.html { redirect_to @user_x_service, notice: 'Servicio atualizado com exito. Un email fue enviado com los datos' }
         format.json { render :show, status: :ok, location: @user_x_service }
