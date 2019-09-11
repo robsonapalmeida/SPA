@@ -5,8 +5,9 @@ class UserXService < ApplicationRecord
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP, message: "el email no es correcto" }
   validate :servicetime_exists
   validate :name_exists
-  #validates :email, :uniqueness => {:scope => [:servicedate, :servicetime], message:"Para esse mesmo dia e hora, ja tem um servicio cadastrado. Veja su email"}
-  validate :email_search, :on => :create
+  #validates :servicedate, :uniqueness => {:scope => [:servicedate, :servicetime], message:"Para esse mesmo dia e hora, ja tem um servicio cadastrado."}
+  #validate :email_search, :on => :update
+  validate :email_search
   
   def servicetime_exists
     if servicetime.strftime("%H") == "00" && servicetime.strftime("%M") == "00"
@@ -32,21 +33,10 @@ class UserXService < ApplicationRecord
  
   def email_search
   
-    chkexist = UserXService.where("email = ? and servicedate = ? AND servicetime = ? AND id <>?",email, servicedate, servicetime,id)
-   
+    chkexist = UserXService.where("servicedate = ? AND servicetime = ? AND service_id = ?",servicedate, servicetime, service_id)
       if  chkexist[0].nil? == false 
-        errors.add("", "¿Tiene el servicio ** #{chkexist[0].service.name} ** no mismo día y hora ")
-       
+        errors.add(" ", "Ya hay una reserva no mismo día y hora para o servicio ** #{chkexist[0].service.name} ** tienes que elegir otro momento, o contacte al Sr. Xxxxxxx emai:x@gmail.com")
       end  
-      
-     
   end
-
-  
-
-
-  
-
-  
 
 end
