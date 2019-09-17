@@ -39,13 +39,18 @@ Click on the button (Haga tu cita), then, you will see the schedule page.
 fill in the fields.
 
 
-To create new services, this is the link
+To create new service, this is the link
 https://limitless-scrubland-08786.herokuapp.com/services
 
 to see all the schedule
 https://limitless-scrubland-08786.herokuapp.com/user_x_services
 
+Next implementations requested by the customer.
 
+  1. - Integrate with google agenda if possible.
+  2. - Change the grid format to be possible delete more than one record at the same time.
+
+all of them has to be ready until Oct, 31st 2019
 
 
 
