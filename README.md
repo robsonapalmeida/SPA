@@ -22,7 +22,7 @@ The goal of this app is to schedule some SPA appointments
 How to use a Test version?. 
 
 Main screen.
-<img src="Main.png" alt="First page"/>
+<img src="Main.PNG" alt="First page"/>
 
 
 
