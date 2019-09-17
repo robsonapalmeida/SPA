@@ -21,12 +21,28 @@ The goal of this app is to schedule some SPA appointments
 
 How to use a Test version?. 
 
+link to the main page 
+https://limitless-scrubland-08786.herokuapp.com
+
 Main screen.
+
 <img src="Main.PNG" alt="First page"/>
 
+After choosing the service, the page will be displayed as shown below
+
+<img src="ServiceExplanation.PNG" alt="Service Explanation"/>
 
 
 
-https://limitless-scrubland-08786.herokuapp.com
+, at the bottom of the page, there is a button (Haga tu cita) where you will see the page below.
+
+
+
+
+fillout with your  infos and that's it.
+
+
+
+
 
 
