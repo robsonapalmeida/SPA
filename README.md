@@ -21,6 +21,12 @@ The goal of this app is to schedule some SPA appointments
 
 How to use a Test version?. 
 
+Main screen.
+
+![Screenshot](Main.png)
+
+
+
 https://limitless-scrubland-08786.herokuapp.com
 
 
