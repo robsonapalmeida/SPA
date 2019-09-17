@@ -32,14 +32,19 @@ After choosing the service, the page will be displayed as shown below
 
 <img src="ServiceExplanation.PNG" alt="Service Explanation"/>
 
+Click on the button (Haga tu cita), then, you will see the schedule page.
+
+<img src="ScheduleService.PNG" alt="Schedule appointment page"/>
+
+fill in the fields.
 
 
-, at the bottom of the page, there is a button (Haga tu cita) where you will see the page below.
+To create new services, this is the link
+https://limitless-scrubland-08786.herokuapp.com/services
 
+to see all the schedule
+https://limitless-scrubland-08786.herokuapp.com/user_x_services
 
-
-
-fillout with your  infos and that's it.
 
 
 
